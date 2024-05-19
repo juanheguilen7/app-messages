@@ -1,0 +1,14 @@
+.formMensagges{
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12rem;
+    width: 20rem;
+    border: 2px solid grey;
+    margin: 0 auto;
+    .boxForm{
+        display: flex;
+        flex-direction: column;
+    }
+}
