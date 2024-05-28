@@ -1,4 +1,4 @@
-import { addDoc, collection, getDoc, doc, setDoc } from "firebase/firestore";
+import { getDoc, doc, setDoc } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
 import { db } from '@/utils/firebase';
 import { cookies } from "next/headers";
@@ -19,7 +19,7 @@ export const POST = async (req: NextRequest) => {
             const userExist = await getDoc(docRef);
 
             const token = dataUser.user.stsTokenManager.accessToken;
-            
+
             const responseCookies = cookies();
 
             if (userExist.exists()) {

@@ -5,9 +5,11 @@ import { signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 
 const Page = () => {
+
   const [value, setValue] = useState<any>('');
   const [error, setError] = useState<string | null>(null);
   const route = useRouter();
+
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data: any) => {
       setValue(data);
@@ -16,6 +18,7 @@ const Page = () => {
   useEffect(() => {
     const createUser = async () => {
       if (value) {
+        sessionStorage.setItem('id',value.user.uid)
         try {
           const response = await fetch('/api/create-user', {
             method: 'POST',
@@ -26,9 +29,9 @@ const Page = () => {
           });
           if (!response.ok) {
             throw new Error("Failed to create user");
-          } else (
+          } else {
             route.push("/dashboard")
-          )
+          }
         } catch (error) {
           setError("Failed to create user");
           console.error(error);

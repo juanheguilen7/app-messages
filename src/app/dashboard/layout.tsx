@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar/NavBar"
+import NavBar from "./components/NavBar/NavBar"
 
 
 export const metadata = {
