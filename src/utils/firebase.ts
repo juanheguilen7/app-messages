@@ -1,7 +1,7 @@
 // Importa las funciones necesarias de los SDKs que necesitas
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 // TODO: Añade los SDKs para los productos de Firebase que quieres usar
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,8 +23,8 @@ const app = initializeApp(firebaseConfig);
 // Inicializar Firestore
 const db = getFirestore(app);
 const auth = getAuth(app);
-auth.languageCode = 'it';
-// To apply the default browser preference instead of explicitly setting it.
-auth.useDeviceLanguage();
 
-export { app, db, auth };
+const provider = new GoogleAuthProvider();
+
+
+export { app, db, auth, provider };

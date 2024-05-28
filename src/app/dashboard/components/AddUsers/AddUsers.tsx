@@ -35,4 +35,4 @@ const AddUsers = () => {
     )
 }
 
-export default AddUsers
+export default AddUsers;

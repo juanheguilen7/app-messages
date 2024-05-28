@@ -1,9 +1,9 @@
 import React from 'react'
-import MakeMenssages from './components/Menssages/MakeMenssages'
 import AddUsers from './components/AddUsers/AddUsers';
 import EditUser from './components/EditUser/EditUser';
+import MakeMenssages from './components/Menssages/MakeMenssages';
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <>
       <MakeMenssages />
@@ -13,4 +13,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Dashboard;
