@@ -1,4 +1,3 @@
-import NavBar from "./dashboard/NavBar"
 
 export const metadata = {
   title: 'Next.js',

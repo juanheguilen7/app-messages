@@ -1,0 +1,22 @@
+.containerNav {
+    padding: 0 5rem;
+
+    .boxNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid black;
+
+        li {
+            list-style: none;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
