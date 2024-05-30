@@ -15,14 +15,16 @@ const AddUsers = () => {
     const handleSubmit = async (event: any) => {
         event.preventDefault();
 
-        const id = sessionStorage.getItem('id');
-        const sendData = {
-            contact: dataForm,
-            uid: id
-        }
-        const response = await fetch('/api/addUser', { method: 'POST', body: JSON.stringify(sendData) });
-        if (response.ok) {
-            setDataForm(initialValues);
+        const id = localStorage.getItem('id');
+        if (id) {
+            const sendData = {
+                contact: dataForm,
+                uid: id
+            }
+            const response = await fetch('/api/addUser', { method: 'POST', body: JSON.stringify(sendData) });
+            if (response.ok) {
+                setDataForm(initialValues);
+            }
         }
     }
     const handleChange = (event: any) => {
@@ -79,7 +81,7 @@ const AddUsers = () => {
                     <label htmlFor="time">
                         Hora en la que quiero que se envie el mensaje
                     </label>
-                    <input type="time" name='time' id='time' onChange={dataForm.time} value={dataForm.time} />
+                    <input type="time" name='time' id='time' onChange={handleChange} value={dataForm.time} />
                 </div>
                 <button type="submit">Guardar contacto</button>
             </form>

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { signOut } from 'firebase/auth';
-import { auth } from '@/utils/firebase';
+import { auth } from '@/app/utils/firebase';
 import { useRouter } from 'next/navigation';
 
 import './navbar.scss';
@@ -16,7 +16,7 @@ const NavBar = () => {
     })
 
     if (response.ok) {
-      sessionStorage.removeItem('id');
+      localStorage.removeItem('id');
       route.push('/auth/login')
     }
   }

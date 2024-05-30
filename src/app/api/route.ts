@@ -1,6 +1,6 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
-import { db } from '@/utils/firebase';
+import { db } from '@/app/utils/firebase';
 
 //funcionaaa paaa
 export const POST = async (req: NextRequest, res: NextResponse) => {

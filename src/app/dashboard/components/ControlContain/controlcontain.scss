@@ -1,0 +1,14 @@
+.part1{
+    width: 100%;
+}
+
+.boxForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .inputBox{
+        display: flex;
+        flex-direction: column;
+    }
+  
+}

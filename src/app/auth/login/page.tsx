@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { auth, provider } from '@/utils/firebase';
+import { auth, provider } from '@/app/utils/firebase';
 import { signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 
@@ -18,7 +18,7 @@ const Page = () => {
   useEffect(() => {
     const createUser = async () => {
       if (value) {
-        sessionStorage.setItem('id',value.user.uid)
+        localStorage.setItem('id',value.user.uid)
         try {
           const response = await fetch('/api/create-user', {
             method: 'POST',
@@ -27,6 +27,7 @@ const Page = () => {
             },
             body: JSON.stringify(value),
           });
+          
           if (!response.ok) {
             throw new Error("Failed to create user");
           } else {

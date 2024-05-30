@@ -1,6 +1,6 @@
 import { getDoc, doc, setDoc } from "firebase/firestore";
 import { NextRequest, NextResponse } from "next/server";
-import { db } from '@/utils/firebase';
+import { db } from '@/app/utils/firebase';
 import { cookies } from "next/headers";
 
 export const POST = async (req: NextRequest) => {
