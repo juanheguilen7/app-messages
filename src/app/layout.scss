@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(54, 54, 53);
+    color: rgb(186, 186, 26);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+input,
+select {
+    color: rgb(186, 186, 26);
+    margin: 0;
+}
+
+input {
+    border-radius: 10px;
+    height: 1.5rem;
+    border: 3px solid white;
+    background-color: transparent;
+}
+
+select {
+    border-radius: 10px;
+    height: 2rem;
+    border: 3px solid white;
+    background-color: transparent;
+}
+
+option {
+    background-color: rgb(54, 54, 53);
+    color: rgb(186, 186, 26);
+}
+
+button {
+    background-color: transparent;
+    color: rgb(186, 186, 26);
+    height: 2rem;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: black;
+    color: white;
+
+}

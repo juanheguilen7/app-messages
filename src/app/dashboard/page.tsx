@@ -11,15 +11,17 @@ const Dashboard = () => {
       <div className='boxMenssage'>
         <MakeMenssages />
       </div>
-      <div className='form3'>
-          <ControlContain/>
-      </div>
+
       <div className='form1'>
         <AddUsers />
+      </div>
+      <div className='form3'>
+        <ControlContain />
       </div>
       <div className='form2'>
         <EditUser />
       </div>
+
     </main>
   );
 };

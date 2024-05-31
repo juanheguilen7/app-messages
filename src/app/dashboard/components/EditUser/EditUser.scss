@@ -1,0 +1,33 @@
+.editUser-title {
+    text-align: center;
+    margin: 0;
+}
+
+.formEdit {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding: 0 1rem;
+
+    .inputEdit {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.2rem;
+
+        input {
+            border-radius: 10px;
+            height: 1.5rem;
+            border: 3px solid white;
+            background-color: transparent;
+
+        }
+        .selectEdit{
+            border-radius: 10px;
+            height: 1.5rem;
+            border: 3px solid white;
+            background-color: transparent;
+        }
+    }
+}

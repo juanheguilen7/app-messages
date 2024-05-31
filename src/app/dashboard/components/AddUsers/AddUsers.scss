@@ -1,0 +1,22 @@
+.addUser-title {
+    text-align: center;
+    margin: 0;
+}
+
+
+.form-addUser {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding: 0 1rem;
+
+    .form-input {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.2rem;
+    }
+
+    
+}

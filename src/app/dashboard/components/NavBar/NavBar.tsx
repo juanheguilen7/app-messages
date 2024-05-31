@@ -25,12 +25,12 @@ const NavBar = () => {
     <nav className='containerNav'>
       <ul className='boxNav'>
         <Link href={'/history'}>
-          Historial de mensajes enviados
+          Historial
         </Link>
         <Link href={'/dashboard'}>
-          Dashboard
+          Panel de control
         </Link>
-        <button onClick={handleLogOut}>Log Out</button>
+        <span onClick={handleLogOut}>Cerarr sesion</span>
       </ul>
     </nav>
   )

@@ -4,19 +4,29 @@
     .boxNav {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 1rem 0;
-        border-bottom: 1px solid black;
+        border-bottom: 3px solid white;
 
         li {
             list-style: none;
-
-
         }
 
         a {
             text-decoration: none;
-            color: black;
+            color: inherit;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        span {
+            cursor: pointer;
+        }
+
+        span:hover {
+            color: white;
         }
     }
 }
