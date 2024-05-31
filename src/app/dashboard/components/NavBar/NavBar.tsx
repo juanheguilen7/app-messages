@@ -30,6 +30,7 @@ const NavBar = () => {
         <Link href={'/dashboard'}>
           Panel de control
         </Link>
+        <Link href={'/showMesssages'}>Lista de mensajes</Link>
         <span onClick={handleLogOut}>Cerarr sesion</span>
       </ul>
     </nav>

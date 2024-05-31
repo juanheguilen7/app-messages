@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { auth, provider } from '@/app/utils/firebase';
 import { signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+
 
 import './login.scss'
+import Image from 'next/image';
 
 const Page = () => {
 
@@ -49,11 +50,11 @@ const Page = () => {
 
   return (
     <main className='login'>
-      <h2>Iniciar session con Google</h2>
-      <div className='sesionBox'>
-        <Image src={'/cromo.png'} alt='img google' width={50} height={50} />
-        <button onClick={handleClick}>Signin with Google</button>
-      </div>
+      <h2>Bienvenido, inicie sesion:</h2>
+      <button onClick={handleClick} className='btn-login'>
+        <Image src={"/google.png"} alt='google icon' width={50} height={50} />
+        <span>Iniciar con google</span>
+      </button>
     </main>
   )
 }

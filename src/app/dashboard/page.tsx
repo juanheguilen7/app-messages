@@ -2,8 +2,8 @@ import React from 'react';
 import AddUsers from './components/AddUsers/AddUsers';
 import EditUser from './components/EditUser/EditUser';
 import MakeMenssages from './components/Menssages/MakeMenssages';
+import ListUsers from './components/ControlContain/ListUsers';
 import './dashboard.scss';
-import ControlContain from './components/ControlContain/ControlContain';
 
 const Dashboard = () => {
   return (
@@ -16,7 +16,7 @@ const Dashboard = () => {
         <AddUsers />
       </div>
       <div className='form3'>
-        <ControlContain />
+        <ListUsers />
       </div>
       <div className='form2'>
         <EditUser />

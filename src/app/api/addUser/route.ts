@@ -1,40 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/app/utils/firebase";
-import { doc, getDoc, updateDoc, arrayUnion, collection, query, where, getDocs } from "firebase/firestore";
+import { doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { transporter } from "@/app/utils/nodemailer";
 import schedule from 'node-schedule';
 
-// Función para seleccionar un mensaje aleatorio de una categoría
-const getRandomMessageFromCategory = async (category: string) => {
-    if (!category) {
-        throw new Error("La categoría es indefinida");
-    }
-    console.log(`Buscando mensajes en la categoría: ${category}`);
-    const q = query(collection(db, "menssages"), where("category", "==", `${category}`));
-
-    const querySnapshot = await getDocs(q);
-    const messages: any = [];
-
-    querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-        messages.push(doc.data().menssage);
-    });
-
-    if (messages.length === 0) {
-        throw new Error("No hay mensajes disponibles en esta categoría");
-    }
-
-    const randomIndex = Math.floor(Math.random() * messages.length);
-    console.log(`Mensaje seleccionado: ${messages[randomIndex]}`);
-
-    return messages[randomIndex];
-};
+//funcion para devolver mensaje random
+import { getRandomMessageFromCategory } from "@/app/utils/selectMessage";
 
 
 
 export const POST = async (req: NextRequest) => {
     const data = await req.json();
-    const { uid, contact } = data; // Asegúrate de que el JSON contiene uid y contact
+    const { uid, contact } = data;
 
     if (!uid || !contact || !contact.email || !contact.category || !contact.time) {
         return NextResponse.json({ success: false, message: 'Datos incompletos' }, { status: 400 });
@@ -43,13 +20,21 @@ export const POST = async (req: NextRequest) => {
     try {
         const docRef = doc(db, 'users', uid);
 
-        // Verifica si el documento del usuario existe
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            // Agrega el contacto al campo 'contacts' del usuario
+            const userData = docSnap.data();
+            const contacts = userData.contacts || [];
+
+            const contactExists = contacts.some((existingContact: { email: string; }) => existingContact.email === contact.email);
+
+            if (contactExists) {
+                return NextResponse.json({ success: false, message: 'El contacto ya existe' }, { status: 400 });
+            }
+
             await updateDoc(docRef, {
                 contacts: arrayUnion(contact)
             });
+
 
             // Función para enviar el correo electrónico
             const sendEmail = async () => {
