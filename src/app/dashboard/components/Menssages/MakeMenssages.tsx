@@ -54,11 +54,14 @@ const MakeMenssages = () => {
 
     return (
         <div className='container-message'>
-            <div className='welcomBox'>
-                <h3>Bienvenido: <mark>{user.name}</mark></h3>
-                {user && <Image src={`${user.image}`} alt='foto-google' width={50} height={50} />}
+            {
+                user ? <div className='welcomBox'>
+                    <h3>Bienvenido: <mark>{user.name}</mark></h3>
+                    <Image src={`${user.image}`} alt='foto-google' width={50} height={50} />
 
-            </div>
+                </div> : null
+            }
+
             <div>
                 <h3>Crear mensaje</h3>
                 <form onSubmit={handleSubmit} className='formMensagges'>
