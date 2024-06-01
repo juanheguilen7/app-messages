@@ -7,8 +7,6 @@ import schedule from 'node-schedule';
 //funcion para devolver mensaje random
 import { getRandomMessageFromCategory } from "@/app/utils/selectMessage";
 
-
-
 export const POST = async (req: NextRequest) => {
     const data = await req.json();
     const { uid, contact } = data;

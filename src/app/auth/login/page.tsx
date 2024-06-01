@@ -22,7 +22,7 @@ const Page = () => {
   useEffect(() => {
     const createUser = async () => {
       if (value) {
-        localStorage.setItem('id', value.user.uid)
+        localStorage.setItem('id', value.user.uid);
         try {
           const response = await fetch('/api/create-user', {
             method: 'POST',
@@ -50,11 +50,17 @@ const Page = () => {
 
   return (
     <main className='login'>
-      <h2>Bienvenido, inicie sesion:</h2>
-      <button onClick={handleClick} className='btn-login'>
-        <Image src={"/google.png"} alt='google icon' width={50} height={50} />
-        <span>Iniciar con google</span>
-      </button>
+      <div className='containerLog'>
+        <h3>APP Sender Mailer</h3>
+        <div className='box-login'>
+          <Image src={"/images/google-icon.png"} alt='google-icon' width={35} height={35} />
+          <button onClick={handleClick} className='btn-session' >
+            Iniciar sesion
+          </button>
+        </div>
+      </div>
+
+
     </main>
   )
 }

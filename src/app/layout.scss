@@ -10,7 +10,7 @@ h4,
 h5,
 input,
 select {
-    color: rgb(186, 186, 26);
+    color: inherit;
     margin: 0;
 }
 
@@ -42,10 +42,10 @@ button {
     margin-top: 0.5rem;
     width: 100%;
     cursor: pointer;
+    font-size: 1.1rem;
 }
 
-button:hover{
-    background-color: black;
-    color: white;
-
+button:hover {
+    background-color: white;
+    color: black;
 }

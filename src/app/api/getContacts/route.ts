@@ -5,7 +5,6 @@ import { doc, getDoc } from "firebase/firestore";
 export const POST = async (req: NextRequest) => {
     try {
         const { uid } = await req.json();
-        console.log(uid)
         if (!uid) {
             return NextResponse.json({ success: false, message: 'UID no proporcionado' }, { status: 400 });
         }

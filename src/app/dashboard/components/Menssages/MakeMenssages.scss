@@ -1,3 +1,27 @@
+.container-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    .welcomBox{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        h3{
+            mark{
+                background-color: transparent;
+                color:white;
+            }
+        }
+        img{
+            border-radius: 15px;
+            border:2px solid white
+        }
+    }
+}
+
 .formMensagges{
     display: flex;
     flex-direction: column;
