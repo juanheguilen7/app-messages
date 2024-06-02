@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "schedule": "npx ts-node src/app/schedule/script.ts"
   },
   "dependencies": {
     "firebase": "^10.12.0",
