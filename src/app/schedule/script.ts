@@ -23,7 +23,7 @@ const scheduleEmailsForNextWeek = async () => {
                     });
 
                     schedule.scheduleJob(scheduleTime.toJSDate(), async function () {
-                        await scheduleEmail(uid, contact);
+                        scheduleEmail(uid, contact);
                     });
                 }
             });
