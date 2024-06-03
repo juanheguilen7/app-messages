@@ -1,8 +1,8 @@
-import { db } from '@/app/utils/firebase';
+import { db } from '../utils/firebase';
 import { getDocs, collection } from 'firebase/firestore';
 import schedule from 'node-schedule';
 import { DateTime } from 'luxon';
-import { scheduleEmail } from '@/app/utils/programSendEmail';
+import { scheduleEmail } from '../utils/programSendEmail';
 
 const scheduleEmailsForNextWeek = async () => {
     try {
